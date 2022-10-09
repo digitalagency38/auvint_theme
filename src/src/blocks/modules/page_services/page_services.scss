@@ -1,0 +1,34 @@
+.page_services, .page_categories {
+    &__in {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        @media all and (max-width: 1280px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media all and (max-width: 860px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+.page_services {
+    .header__catalog_name {
+        font-size: 30px;
+        line-height: 120%;
+        @media all and (max-width: 860px) {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.page_categories {
+    @media all and (max-width: 860px) {
+        .header__catalog_image:after {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .header__catalog_name {
+            font-size: 18px;
+        }
+    }
+}

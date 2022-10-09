@@ -1,0 +1,31 @@
+.seo_block {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    @media all and (max-width: 1280px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    &__title {
+        @extend %title;
+        margin-bottom: 40px;
+        @media all and (max-width: 1280px) {
+            margin-bottom: 20px;
+        }
+    }
+    &__text {
+        p {
+            margin: 0;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #333333;
+            @media all and (max-width: 1280px) {
+                font-size: 14px;
+            }
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

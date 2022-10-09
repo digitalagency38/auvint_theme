@@ -1,0 +1,158 @@
+.contactsMap {
+    margin-bottom: 40px;
+    &__frame {
+        height: 560px;
+        border-radius: 5px;
+        overflow: hidden;
+        @media all and (max-width: 1023px) {
+            height: 400px;
+        }
+    }
+    @media all and (max-width: 1023px) {
+        margin-bottom: 10px;
+    }
+}
+
+.contactsInfo {
+    margin-bottom: 60px;
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 120%;
+        color: #202020;
+        margin-bottom: 20px;
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+        @media all and (max-width: 1023px) {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 10px;
+        }
+    }
+    &__item {
+        background: #F7F7F7;
+        border-radius: 5px;
+        padding: 30px 20px;
+        @media all and (max-width: 1023px) {
+            width: 100%;
+        }
+        .title {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: #202020;
+            opacity: 0.5;
+            margin-bottom: 40px;
+        }
+        .text {
+            text-decoration: none;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 140%;
+            color: #202020;
+        }
+    }
+}
+
+.team_b {
+    padding-top: 60px;
+    margin-bottom: 120px;
+    @media all and (max-width: 1023px) {
+        padding-top: 0;
+        margin-bottom: 30px;
+    }
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 120%;
+        color: #202020;
+        margin-bottom: 40px;
+        @media all and (max-width: 1023px) {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+    }
+    &__block {
+        padding: 30px 80px;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        transition: all .3s ease-out;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            background: #C2C2C2;
+            border-radius: 5px;
+            height: 1px;
+            width: calc(100% - 160px);
+            left: 80px;
+            right: 80px;
+            @media all and (max-width: 1023px) {
+                display: none;  
+            }
+        }
+        &.isBoss {
+            border-color: #2B5086;
+            &:before {
+                opacity: 0;
+            }
+        }
+        @media all and (max-width: 1023px) {
+            padding: 30px 20px;
+            flex-direction: column;
+            align-items: flex-start;    
+        }
+        .team_b__name:nth-child(2) {
+            div {
+                font-weight: 700 !important;
+            }
+        }
+    }
+    &__img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        flex: 0 0 180px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media all and (max-width: 1023px) {
+            margin-bottom: 15px;
+        }
+    }
+    &__name {
+        @media all and (max-width: 1023px) {
+            margin-bottom: 20px;
+        }
+        span {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            color: #202020;
+            opacity: 0.5;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        div {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 120%;
+            color: #202020;
+        }
+    }
+}

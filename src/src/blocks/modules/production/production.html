@@ -1,0 +1,49 @@
+<div class="production">
+    <div class="production__in center">
+        <div class="production__title">
+            Собственное производство
+        </div>
+        <div class="production__text">
+            Новый виток развития иновационных технологий — интерактивные трибуны от компании АУВИНТ. Выступления и проведения презентаций теперь станут информативнее,а подготовка к ним проще.
+        </div>
+
+        <div class="production__slider glide" v-if="sizes.window <= 860">
+            <div class="production__track glide__track" data-glide-el="track">
+                <div class="glide__slides production__slides">
+                    <a href="#" class="production__tile" v-for="item in 4" :key="item.index">
+                        <div class="production__tile_image">
+                            <img src='http://unsplash.it/900/900?random&gravity=center' alt=''/>
+                        </div>
+                        <div class="production__tile_in">
+                            <div class="production__tile_title">Интерактивные трибуны</div>
+                            <div class="production__tile_text">Качественные интерактивные трибуны по индивидуальным проектам.</div>
+                            <div class="production__tile_price">
+                                <span class="from">от</span>
+                                <div class="price">190 000 ₽</div>
+                            </div>
+                            <div class="production__tile_link">Подробнее</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="production__button button">Перейти на сайт</a>
+        
+        <div class="production__tiles" v-if="sizes.window > 860">
+            <a href="#" class="production__tile" v-for="item in 4" :key="item.index">
+                <div class="production__tile_image">
+                    <img src='http://unsplash.it/900/900?random&gravity=center' alt=''/>
+                </div>
+                <div class="production__tile_in">
+                    <div class="production__tile_title">Интерактивные трибуны</div>
+                    <div class="production__tile_text">Качественные интерактивные трибуны по индивидуальным проектам.</div>
+                    <div class="production__tile_price">
+                        <span class="from">от</span>
+                        <div class="price">190 000 ₽</div>
+                    </div>
+                    <div class="production__tile_link">Подробнее</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

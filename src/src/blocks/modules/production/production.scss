@@ -1,0 +1,193 @@
+.production {
+    color: #fff;
+    background: #000 url('../img/production_bg.png') right 41px bottom 0  no-repeat;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    @media all and (max-width: 1280px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    &__in {
+        padding-right: 365px;
+    }
+    &__title {
+        @extend %title;
+        color: #fff;
+        margin-bottom: 40px;
+        color: #FFFFFF;
+        @media all and (max-width: 1280px) {
+            margin-bottom: 20px;
+        }
+    }
+    &__text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        margin-bottom: 30px;
+        padding-right: 122px;
+        @media all and (max-width: 1280px) {
+            margin-bottom: 20px;
+            padding-right: 0;
+        }
+    }
+    &__button {
+        margin-bottom: 40px;
+        @media all and (max-width: 1280px) {
+            margin-bottom: 0;
+        }
+        @media all and (max-width: 860px) {
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    }
+    &__slider {
+        margin-bottom: 20px;
+        padding-right: 86px;
+    }
+    &__track {
+        overflow: visible;
+    }
+    &__tiles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+    &__tile {
+        position: relative;
+        padding: 52px 30px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        overflow: hidden;
+        color: #FFFFFF;
+        @media all and (max-width: 1280px) {
+            padding: 82px 20px 25px;
+        }
+    }
+    &__tile_image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            transition: all .3s ease;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(43, 80, 134, 0.7);
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+            position: relative;
+            z-index: 0;
+            transition: all .6s ease;
+        }
+    }
+    &__tile:hover &__tile_image {
+        &:after {
+            opacity: 0;
+            visibility: hidden;
+        }
+        &:before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__tile_in {
+        position: relative;
+        z-index: 2;
+    }
+    &__tile_title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 120%;
+        margin-bottom: 20px;
+        white-space: normal;
+        @media all and (max-width: 1280px) {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+    }
+    &__tile_text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        margin-bottom: 15px;
+        white-space: normal;
+    }
+    &__tile_price {
+        display: flex;
+        align-items: center;
+        margin-bottom: 28px;
+        .from {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+        }
+        .price {
+            margin-left: 10px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 120%;
+        }
+    }
+    &__tile_link {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 120%;
+    }
+
+    $root: &;
+
+    &__tiles &__tile:nth-child(4n+4) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        padding: 30px 40px;
+        #{$root}__tile_in {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        #{$root}__tile_title {
+            width: 285px;
+            margin-bottom: 0;
+        }
+        #{$root}__tile_text {
+            width: calc(100% - 285px - 207px - 40px);
+            padding-top: 13px;
+        }
+        #{$root}__tile_link {
+            @extend %button;
+        }
+        #{$root}__tile_price {
+            display: none;
+        }
+    }
+}

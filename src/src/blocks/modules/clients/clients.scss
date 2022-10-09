@@ -1,0 +1,74 @@
+.clients {
+    &__in {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        @media all and (max-width: 1280px) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
+    &__row {
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title {
+        @extend %title;
+    }
+    &__arrow {
+        @extend %arrow;
+        &--next {
+            transform: rotate(180deg);
+            margin-left: 40px;
+        }
+    }
+    &__slider {
+        @media all and (max-width: 1280px) {
+            padding-right: 86px;
+        }
+    }
+    &__track {
+        @media all and (max-width: 1280px) {
+            overflow: visible;
+        }
+    }
+    &__item {
+        background: #F7F7F7;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        @media all and (max-width: 1280px) {
+            padding: 20px 32px;
+        }
+        .icon {
+            height: 81px;
+            width: 168px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            @media all and (max-width: 1280px) {
+                height: auto;
+                width: 100%;
+                margin-bottom: 24px;
+            }
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        .text {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 120%;
+            color: #202020;
+            @media all and (max-width: 1280px) {
+                font-size: 14px;
+            }
+        }
+    }
+}

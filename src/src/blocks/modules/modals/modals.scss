@@ -1,0 +1,194 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background: rgba(0, 0, 0, .8);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+    &.isOpened {
+        opacity: 1;
+        visibility: visible;
+    }
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+    &__in {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        max-width: 586px;
+        padding: 30px;
+        background: #F7F7F7;
+        border-radius: 5px;
+        text-align: left;
+        box-sizing: border-box;
+        position: relative;
+        @media all and (max-width: 1280px) {
+            max-width: calc(100vw - 32px);
+            padding: 20px;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        &.isSent {
+            & > div:not(.modal__success) {
+                display: none;
+            }
+        }
+        &:not(.isSent) {
+            .modal__success {
+                display: none;
+            }
+        }
+    }
+    &__closer {
+        width: 30px;
+        height: 30px;
+        font-size: 0;
+        cursor: pointer;
+        margin-left: auto;
+        svg {
+            pointer-events: none;
+        }
+    }
+    &__product {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        order: -1;
+        @media all and (max-width: 1280px) {
+            margin-bottom: 30px;
+        }
+    }
+    &__in-content {
+        padding: 0 30px 30px;
+        max-height: 70vh;
+        overflow: auto;
+        @media all and (max-width: 1280px) {
+            padding: 0 0 40px 0;
+        }
+    }
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 120%;
+        color: #202020;
+        margin-bottom: 40px;
+        order: -2;
+    }
+    &__product_left {
+        width: 102px;
+        height: 95px;
+        border-radius: 5px;
+        overflow: hidden;
+        @media all and (max-width: 1280px) {
+            width: 86px;
+            height: 80px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+    }
+    &__product_right {
+        width: calc(100% - 102px - 30px);
+        margin-left: 30px;
+        @media all and (max-width: 1280px) {
+            width: calc(100% - 86px - 20px);
+            margin-left: 20px;
+        }
+        .name {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            color: #202020;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            color: #2B5086;
+        }
+    }
+    &__success {
+        .title {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 120%;
+            color: #202020;
+            margin-bottom: 30px;
+            span {
+                color: #6AC259;
+            }
+        }
+        .description {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+        .button {
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    }
+    .formBlock {
+        &__row {
+            flex-direction: column;
+        }
+        &__item {
+            width: 100% !important;
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+        &__bottom {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &__checkbox {
+            width: 100%;
+            margin-bottom: 30px;
+            color: #666666;
+        }
+        &__button {
+            width: 100%;
+            input[type="submit"] {
+                width: 100%;
+            }
+        }
+        .wpcf7-not-valid-tip {
+            display: none;
+        }
+    }
+    .wpcf7-response-output {
+        display: none;
+    }
+    .wpcf7-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 5;
+        margin: 0;
+    }
+}

@@ -1,0 +1,75 @@
+<footer class="footer">
+    <div class="footer__top">
+        <div class="footer__in center">
+            <div class="footer__left">
+                <a href="#" class="footer__logo">
+                    <img src="@img/svg/logo.svg" width="100%" alt="">
+                </a>
+                <nav class="footer__mobile_menu" v-if="sizes.window <= 1280">
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Главная</a></li>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Новости</a></li>
+                        <li><a href="#" class="hasLineOnHover">Отзывы</a></li>
+                        <li><a href="#" class="hasLineOnHover">Контакты</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                </nav>
+                <ul class="footer__info_items">
+                    <li class="footer__info_item">ИП Ваньков Максим Юрьевич</li>
+                    <li class="footer__info_item">ИНН 772401953110</li>
+                    <li class="footer__info_item">ОГРН 317774600556173</li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="#" target="_blank" class="footer__social" v-for="item in 4">
+                        <img src="@img/svg/instagram2.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__right" v-if="sizes.window > 1280">
+                <nav class="footer__menu">
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Главная</a></li>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Новости</a></li>
+                        <li><a href="#" class="hasLineOnHover">Отзывы</a></li>
+                        <li><a href="#" class="hasLineOnHover">Контакты</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,50 @@
+<section class="main-slider">
+    <div class="main-slider__in">
+        <div class="glide main-slider__glide">
+            <div class="glide__track main-slider__track" data-glide-el="track">
+              <ul class="glide__slides main-slider__slides">
+                <li class="glide__slide main-slider__slide" v-for="slide in 6" :key="slide.index">
+                  <div class="main-slider__slide__in center">
+                    <div class="main-slider__slide_bg">
+                      <img src="@img/slider_bg.jpg" alt="">
+                    </div>
+                    <div class="main-slider__slide_src">
+                      <div class="main-slider__slide_left">
+                        <div class="title">Интерактивные панели</div>
+                        <div class="description">
+                          Как принято считать, реплицированные с зарубежных источников, современные исследования, вне зависимости от их уровня, должны быть объявлены нарушающими общечеловеческие нормы этики и морали!
+                        </div>
+                        <a href="#" class="button">Подробнее</a>
+                      </div>
+                      <div class="main-slider__slide_right">
+                        <div class="main-slider__slide_right_image">
+                          <img src="@img/slide_image.jpg" alt="">
+                        </div>
+                        <div class="main-slider__slide_right_items">
+                          <div class="main-slider__slide_right_item" v-for="elem in 4" :key="elem.index">
+                            <img src="@img/svg/newline.svg" height="100%" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="main-slider__arrows_wrap">
+              <div class="main-slider__arrows_in center">
+                <div class="glide__arrows main-slider__arrows" data-glide-el="controls">
+                    <button class="main-slider__arrow main-slider__arrow--left" data-glide-dir="<">
+                      <img src="@img/svg/slider_arr.svg" width="100%" alt="">
+                    </button>
+                    <div class="main-slider__counter">{{ mainSlider.slider.index + 1 }} / 6</div>
+                    <div class="main-slider__line"></div>
+                    <button class="main-slider__arrow main-slider__arrow--right" data-glide-dir=">">
+                      <img src="@img/svg/slider_arr.svg" width="100%" alt="">
+                    </button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>

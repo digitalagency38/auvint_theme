@@ -1,0 +1,109 @@
+.about {
+    // padding-top: 120px;
+    padding-bottom: 120px;
+    &__main {
+        padding-top: 120px;
+    }
+    @media all and (max-width: 1280px) {
+        padding-bottom: 60px;
+        &__main {
+            padding-top: 60px;
+        }
+    }
+    &__title {
+        @extend %title;
+        @media all and (max-width: 1280px) {
+            margin-bottom: 20px;
+        }
+    }
+    &__texts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @media all and (max-width: 1280px) {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            &:not(.isOpened) {
+                height: 202px;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    height: 88px;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 90.29%);
+                }
+            }
+        }
+    }
+    &__texts_left {
+        padding-right: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media all and (max-width: 1280px) {
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 140%;
+            color: #333333;
+            margin: 0;
+            &:not(:last-child) {
+                margin-bottom: 25px;
+                @media all and (max-width: 1280px) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    &__texts_right {
+        background: #F7F7F7;
+        padding: 50px 60px;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 5px;
+        @media all and (max-width: 1280px) {
+            padding: 0;
+            background: transparent;
+        }
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #333333;
+            margin: 0;
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    &__more {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+        color: #2B5086;
+        margin-top: 20px;
+    }
+    &__image {
+        font-size: 0;
+        margin-top: 50px;
+        border-radius: 5px;
+        overflow: hidden;
+        @media all and (max-width: 1280px) {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+}

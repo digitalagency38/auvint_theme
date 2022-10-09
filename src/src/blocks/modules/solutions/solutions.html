@@ -1,0 +1,33 @@
+<div class="solutions">
+    <div class="solutions__in center">
+        <div class="solutions__left">
+            <div class="title">
+                Отраслевые решения
+            </div>
+            <div class="description">
+                Как принято считать, реплицированные с зарубежных источников, современные исследования, вне зависимости от их уровня, должны быть объявлены нарушающими общечеловеческие нормы этики и морали!
+            </div>
+            <a href="#" class="link hasLineOnHover">Показать все</a>
+        </div>
+        <div class="solutions__right" v-if="sizes.window > 1280">
+            <a href="#" class="solutions__right_item" v-for="item in 6" :key="item.index">
+                <div class="solutions__right_item_image">
+                    <img src="@img/slider_bg.jpg" alt="">
+                </div>
+                <div class="solutions__right_item_text">Комплексная поставка оборудования</div>
+            </a>
+        </div>
+        <div class="glide solutions__glide" v-if="sizes.window <= 1280">
+            <div class="glide__track solutions__track" data-glide-el="track">
+              <div class="glide__slides solutions__slides">
+                <a href="#" class="solutions__right_item" v-for="item in 6" :key="item.index">
+                    <div class="solutions__right_item_image">
+                        <img src="@img/slider_bg.jpg" alt="">
+                    </div>
+                    <div class="solutions__right_item_text">Комплексная поставка оборудования</div>
+                </a>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+.sertificates {
+    &__in {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        @media all and (max-width: 1280px) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            overflow: hidden;
+        }
+    }
+    &__row {
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title {
+        @extend %title;
+        @media all and (max-width: 1280px) {
+            margin-bottom: 20px;
+        }
+    }
+    &__arrow {
+        @extend %arrow;
+        &--next {
+            transform: rotate(180deg);
+            margin-left: 40px;
+        }
+    }
+    &__item {
+        border-radius: 5px;
+        border: 1px solid #666666;
+        border-radius: 5px;
+        overflow: hidden;
+        font-size: 0;
+        img {
+            width: 100%;
+        }
+    }
+    &__slider {
+        @media all and (max-width: 1280px) {
+            padding-right: 102px;
+            .glide__track {
+                overflow: visible;
+            }
+        }
+    }
+}

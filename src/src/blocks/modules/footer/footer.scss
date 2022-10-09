@@ -1,0 +1,167 @@
+.footer {
+    background: #F7F7F7;
+    
+    &__in {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__top {
+        padding-top: 100px;
+        padding-bottom: 120px;
+        @media all and (max-width: 1280px) {
+            padding-top: 60px;
+            padding-bottom: 30px;
+        }
+    }
+    &__left {
+        @media all and (max-width: 1280px) {
+            width: 100%;
+        }
+    }
+    &__logo {
+        display: block;
+        width: 240px;
+        font-size: 0;
+        margin-bottom: 62px;
+        @media all and (max-width: 1280px) {
+            width: 223px;
+            margin-bottom: 30px;
+        }
+    }
+    &__info_items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__info_item {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #666666;
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    &__socials {
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+    }
+    &__social {
+        display: block;
+        width: 30px;
+        height: 30px;
+        font-size: 0;
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+    &__menu {
+        width: 803px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__menu ul {
+        list-style: none;
+        margin: 0;
+        padding-bottom: 0;
+        li:not(:last-child) {
+            margin-bottom: 15px;
+        }
+        li:first-child {
+            margin-bottom: 33px;
+            a {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 120%;
+                color: #202020;
+            }
+        }
+        a {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #333333;
+            text-decoration: none;
+        }
+    }
+
+    &__mobile_menu {
+        border-top: 1px solid #C2C2C2;
+        margin-bottom: 30px;
+        ul {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            margin: 0;
+            list-style: none;
+            border-bottom: 1px solid #C2C2C2;
+            &.isOpened li:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            &.isOpened li:first-child {
+                margin-bottom: 20px;
+            }
+            li:first-child {
+                a {
+                    display: block;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 120%;
+                    color: #202020;
+                    text-decoration: none;
+                    background: url('../img/svg/arrow2.svg') 100% 50% / 7px no-repeat;
+                }
+            }
+            li:not(:first-child) {
+                display: none;
+                margin-bottom: 10px;
+                a {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 140%;
+                    color: #333333;
+                    text-decoration: none;
+                }
+            }
+            li.isOpened {
+                padding-bottom: 20px;
+            }
+            li.isOpened ~ li {
+                display: block;
+            }
+        }
+    }
+    .header__top_left {
+        display: flex;
+        align-items: center;
+        @media all and (max-width: 860px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &__bottom_link {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #FFFFFF;
+        display: block;
+        text-decoration: none;
+        &:not(:last-child) {
+            margin-right: 40px;
+            @media all and (max-width: 860px) {
+                margin-right: 0;
+                margin-bottom: 14px;
+            }
+        }
+    }
+}
