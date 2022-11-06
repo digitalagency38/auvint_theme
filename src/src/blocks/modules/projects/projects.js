@@ -11,6 +11,8 @@ const Projects = class Projects {
             perView: 3,
             gap: 20,
             type: 'slider',
+            swipeThreshold: false,
+            dragThreshold: false,
             breakpoints: {
                 1280: {
                     perView: 2,
@@ -23,8 +25,8 @@ const Projects = class Projects {
             }
         }).mount();
         this.slider.on(['run'], () => {
+            console.log(this.index);ß
             this.index = this.slider.index;
-            console.log(this.index);
         })
     }
     init() {
