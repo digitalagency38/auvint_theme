@@ -594,3 +594,7 @@ body .team_b__block .team_b__name:nth-child(2) div {
 .wpcf7-response-output {
 	display: none !important;
 }
+
+.formBlock.noPaddingTop {
+   padding-top: 0;
+}
