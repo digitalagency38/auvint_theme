@@ -53,7 +53,7 @@ $site_address = get_option('site_address');
             <? if (!empty($site_phone)) { ?>
                 <div class="contactsInfo__item">
                     <div class="title">Телефон</div>
-                    <a class="zphone" href="tel:<?= $site_phone; ?>" class="text"><?= $site_phone; ?></a>
+                    <a href="tel:<?= $site_phone; ?>" class="text zphone"><?= $site_phone; ?></a>
                 </div>
             <? }; ?>
             <? if (!empty($site_hot)) { ?>
