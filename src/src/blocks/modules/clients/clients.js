@@ -10,6 +10,8 @@ const clients = class clients {
         this.slider = new Glide('.clients__slider', {
             perView: 4,
             gap: 20,
+            swipeThreshold: false,
+            dragThreshold: false,
             breakpoints: {
                 1280: {
                     perView: 2,
