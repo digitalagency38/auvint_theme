@@ -10,6 +10,10 @@
 
 $post_type = get_post_type();
 $post = get_post();
+$site_email = get_option('site_email');
+$site_phone = get_option('site_phone');
+$site_hot = get_option('site_hot');
+$site_address = get_option('site_address');
 $site_map = get_option('site_map');
 
 if ($post_type === 'services') {
@@ -309,42 +313,54 @@ if ($post_type === 'products' || $post_type === 'portfolio') {
 	</div>
 </div>
 <? }; ?>
+
 <div class="map">
-	<div class="map__frame">
-		<?= $site_map; ?>
-	</div>
-	<div class="map__in center">
-		<div class="map__contacts">
-			<div class="map__contacts_left">
-				<div class="map__contact map__contact--address">
-					<div class="title">Адрес</div>
-					<div class="text">г. Иркутск, ул. Баррикад, 51/9</div>
-				</div>
-				<div class="map__contact map__contact--address">
-					<div class="title">Горячая линия</div>
-					<a href="tel:88005512069" class="text">8 800 551-20-69</a>
-				</div>
-				<div class="map__contact map__contact--address">
-					<div class="title">Телефон</div>
-					<a href="tel:88005512069" class="text">+7 (3952) 265-994</a>
-				</div>
-				<div class="map__contact map__contact--address">
-					<div class="title">Почта</div>
-					<a href="mailto:opt@auvint.ru" class="text">opt@auvint.ru</a>
-				</div>
-			</div>
-			<div class="map__contacts_right">
-				<div class="avatar">
-					<img src='https://dummyimage.com/110x110.jpg' alt='' />
-				</div>
-				<div class="texts">
-					<div class="name">Связаться с руководителем</div>
-					<div class="texts_button">Написать</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="map__frame">
+        <?= $site_map; ?>
+    </div>
+    <div class="map__in center">
+        <div class="map__contacts">
+            <div class="map__contacts_left">
+                <? if (!empty($site_address)) { ?>
+                    <div class="map__contact map__contact--address">
+                        <div class="title">Адрес</div>
+                        <div class="text"><?= $site_address; ?></div>
+                    </div>
+                <? }; ?>
+                <? if (!empty($site_hot)) { ?>
+                    <div class="map__contact map__contact--address">
+                        <div class="title">Горячая линия</div>
+                        <a href="tel:<?= $site_hot; ?>" class="text"><?= $site_hot; ?></a>
+                    </div>
+                <? }; ?>
+                <? if (!empty($site_phone)) { ?>
+                    <div class="map__contact map__contact--address">
+                        <div class="title">Телефон</div>
+                        <a href="tel:<?= $site_phone; ?>" class="text"><?= $site_phone; ?></a>
+                    </div>
+                <? }; ?>
+                <? if (!empty($site_email)) { ?>
+                    <div class="map__contact map__contact--address">
+                        <div class="title">Почта</div>
+                        <a href="mailto:<?= $site_email; ?>" class="text"><?= $site_email; ?></a>
+                    </div>
+                <? }; ?>
+            </div>
+            <? if (!empty($ruk_data)) { ?>
+                <div class="map__contacts_right">
+                    <div class="avatar">
+                        <img src='<?= $ruk_data['image']; ?>' alt=''/>
+                    </div>
+                    <div class="texts">
+                        <div class="name"><?= $ruk_data['title']; ?>м</div>
+                        <a href="<?= $ruk_data['link']; ?>" class="texts_button">Написать</a>
+                    </div>
+                </div>
+            <? }; ?>
+        </div>
+    </div>
 </div>
+
 <? } elseif ($post_type === 'services') { ?>
 	<div class="pageTop">
 
