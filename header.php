@@ -209,7 +209,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </div>
                     <div class="header__bottom_phones" v-if="sizes.window > 1280">
                         <? if(!empty($site_phone)) { ?>
-                        <a href="tel:<?= $site_phone; ?>"><?= $site_phone; ?></a>
+                        <a class="zphone" href="tel:<?= $site_phone; ?>"><?= $site_phone; ?></a>
                         <? }; ?>
                         <? if(!empty($site_hot)) { ?>
                         <a href="tel:<?= $site_hot; ?>"><?= $site_hot; ?></a>
