@@ -24,6 +24,7 @@ const Projects = class Projects {
         }).mount();
         this.slider.on(['run'], () => {
             this.index = this.slider.index;
+            console.log(this.index);
         })
     }
     init() {
