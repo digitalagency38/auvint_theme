@@ -25,7 +25,7 @@ $what_give = get_field('what_give');
 $sertificates = get_field('список');
 $news = get_field('news');
 $about = get_field('about');
-$ruk_data = get_field('ruk_data', 6);
+$ruk_data = get_field('ruk_data');
 
 
 

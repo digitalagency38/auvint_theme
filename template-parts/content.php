@@ -15,6 +15,7 @@ $site_phone = get_option('site_phone');
 $site_hot = get_option('site_hot');
 $site_address = get_option('site_address');
 $site_map = get_option('site_map');
+$ruk_data = get_field('ruk_data', 6);
 
 if ($post_type === 'services') {
 	$benefits = get_field('benefits');
@@ -50,6 +51,7 @@ if ($post_type === 'products' || $post_type === 'portfolio') {
 };
 
 ?>
+<pre style="display: none;"><?= print_r($ruk_data) ?></pre>
 <? if ($post_type === 'categories') { ?>
 <div class="pageTop">
 
