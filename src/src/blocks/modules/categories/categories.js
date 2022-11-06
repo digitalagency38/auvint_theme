@@ -11,6 +11,8 @@ const Categories = class Categories {
             perView: 3,
             gap: 20,
             type: 'slider',
+            swipeThreshold: false,
+            dragThreshold: false,
             breakpoints: {
                 1280: {
                     perView: 2,
