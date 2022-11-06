@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css?_v=20221106152636">
+</head>
+<body>
+    <div class="wrapper" id="app" :class="{isMobile, isTablet}">
+        <header class="header" :class="{ 'isMobile': sizes.window <= 1280 }">
+    <div class="header__top" v-if="sizes.window > 1280">
+        <div class="header__top_in center">
+            <div class="header__top_left">
+                Инженерные решения любой сложности и широкий ассортимент товаров в наличии
+            </div>
+            <div class="header__top_middle">
+                <a href="mailto:opt@auvint.ru" class="item">opt@auvint.ru</a>
+                <div class="item">г. Иркутск, ул. Баррикад, 55</div>
+            </div>
+            <!-- <div class="header__top_right">
+                
+            </div> -->
+        </div>
+    </div>
+    <div class="header__bottom">
+        <div class="header__bottom_in center">
+            <a href="#" class="header__bottom_logo">
+                <img src="img/svg/logo.svg" width="100%" alt="">
+            </a>
+            <div class="header__bottom_buttons" v-if="sizes.window <= 1280">
+                <div class="header__bottom_button header__bottom_button--phone">
+                    <img src="img/svg/phone_opener.svg" width="100%" alt="">
+                </div>
+                <div class="header__bottom_button header__bottom_button--search">
+                    <img src="img/svg/search_opener.svg" width="100%" alt="">
+                </div>
+                <div class="header__bottom_button header__bottom_button--burger">
+                    <img src="img/svg/burger_opener.svg" width="100%" alt="">
+                </div>
+            </div>
+            <div class="header__bottom_search" v-if="sizes.window > 1280">
+                <input type="text" class="input">
+                <button class="search">
+                    <img src="img/svg/search.svg" width="100%" alt="">
+                </button>
+            </div>
+            <div class="header__bottom_phones" v-if="sizes.window > 1280">
+                <a href="tel:+73952265994">+7 (3952) 265-994</a>
+                <a href="tel:88005512069">8 800 551-20-69</a>
+            </div>
+        </div>
+    </div>
+    <div class="header__menu" v-if="sizes.window > 1280">
+        <div class="header__menu_in center">
+            <div class="header__menu_catalog">
+                <div class="header__menu_catalog_opener" @click="header.toggleModal.apply(header)">
+                    <div class="text">Каталог</div>
+                    <div class="arrow">
+                        <img src="img/svg/arrow.svg" width="100%" alt="">
+                    </div>
+                </div>
+            </div>
+            <nav class="header__menu_links">
+                <ul>
+                    <li><a href="#"><span>Услуги</span></a></li>
+                    <li><a href="#"><span>О компании</span></a></li>
+                    <li><a href="#"><span>Контакты</span></a></li>
+                    <li><a href="#"><span>Портфолио</span></a></li>
+                    <li><a href="#"><span>Благодарности</span></a></li>
+                    <li><a href="#"><span>Отзывы</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="header__catalog" v-if="sizes.window > 1280" :class="{'isOpened': header.isModalOpened}" v-if="sizes.window > 1280">
+        <div class="header__catalog_in center">
+            <div class="header__catalog_items">
+                <a href="#" class="header__catalog_item" v-for="(item, key) in 8">
+                    <div class="header__catalog_image">
+                        <img src='https://dummyimage.com/300x300.jpg?text=300x300' alt=''/>
+                    </div>
+                    <div class="header__catalog_info">
+                        <div class="header__catalog_name">Интерактивные панели {{ key }}</div>
+                        <div class="header__catalog_price">
+                            <div class="from">от</div>
+                            <div class="price">99 000 ₽</div>
+                        </div>
+                        <div class="header__catalog_more">
+                            Подробнее
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</header>
+        <div class="breadcrumbs">
+    <div class="breadcrumbs__in center">
+        <a href="#" class="link">Главная</a>
+        <span class="delim"></span>
+        <span class="cur">Услуги</span>
+    </div>
+</div>
+        <h1 class="page__title center">
+            Наше портфолио
+        </h1>
+        <div class="contactsMap">
+    <div class="contactsMap__in center">
+        <div class="contactsMap__frame">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Af09648f67f59eed6e5cfdf38646c6fef2f6df04c3d947044fcdedf9078c9e3fd&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    </div>
+</div>
+
+<div class="contactsInfo">
+    <div class="contactsInfo__in center">
+        <div class="contactsInfo__items">
+            <div class="contactsInfo__item">
+                <div class="title">Адрес</div>
+                <div class="text">г. Иркутск, ул. Баррикад, 51/9</div>
+            </div>
+            <div class="contactsInfo__item">
+                <div class="title">Телефон</div>
+                <a href="tel:+73952265994" class="text">+7 (3952) 265-994</a>
+            </div>
+            <div class="contactsInfo__item">
+                <div class="title">Горячая линия</div>
+                <a href="tel:88005512069" class="text">8 800 551-20-69</a>
+            </div>
+            <div class="contactsInfo__item">
+                <div class="title">Почта</div>
+                <a href="tel:opt@auvint.ru" class="text">opt@auvint.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="contactsInfo">
+    <div class="contactsInfo__in center">
+        <div class="contactsInfo__title">Реквизиты</div>
+        <div class="contactsInfo__items">
+            <div class="contactsInfo__item">
+                <div class="title">ИП:</div>
+                <div class="text">Ваньков Максим Юрьевич</div>
+            </div>
+            <div class="contactsInfo__item">
+                <div class="title">ОГРН:</div>
+                <div class="text">317774600556173</div>
+            </div>
+            <div class="contactsInfo__item">
+                <div class="title">ИНН:</div>
+                <div class="text">772401953110</div>
+            </div>            
+        </div>
+    </div>
+</div>
+
+
+<div class="team_b center">
+    <div class="team_b__title">Наша команда</div>
+    <div class="team_b__blocks">
+        <div class="team_b__block">
+            <div class="team_b__img"><picture><source srcset="img/bg_avat.webp" type="image/webp"><img src="img/bg_avat.png" alt=""></picture></div>
+            <div class="team_b__name">
+                <span>ФИО</span>
+                <div>Константин Владимирович</div>
+            </div>
+            <div class="team_b__name">
+                <span>Должность:</span>
+                <div>Руководитель</div>
+            </div>
+            <div class="team_b__name">
+                <span>Телефон:</span>
+                <div>+7 (3952) 265-994</div>
+            </div>
+            <div class="team_b__name">
+                <span>Добавочный:</span>
+                <div>12345</div>
+            </div>
+            <div class="team_b__name">
+                <span>Почта:</span>
+                <div>opt@auvint.ru</div>
+            </div>
+        </div>
+        <div class="team_b__block">
+            <div class="team_b__img"><picture><source srcset="img/bg_avat.webp" type="image/webp"><img src="img/bg_avat.png" alt=""></picture></div>
+            <div class="team_b__name">
+                <span>ФИО</span>
+                <div>Константин Владимирович</div>
+            </div>
+            <div class="team_b__name">
+                <span>Должность:</span>
+                <div>Руководитель</div>
+            </div>
+            <div class="team_b__name">
+                <span>Телефон:</span>
+                <div>+7 (3952) 265-994</div>
+            </div>
+            <div class="team_b__name">
+                <span>Добавочный:</span>
+                <div>12345</div>
+            </div>
+            <div class="team_b__name">
+                <span>Почта:</span>
+                <div>opt@auvint.ru</div>
+            </div>
+        </div>
+        <div class="team_b__block">
+            <div class="team_b__img"><picture><source srcset="img/bg_avat.webp" type="image/webp"><img src="img/bg_avat.png" alt=""></picture></div>
+            <div class="team_b__name">
+                <span>ФИО</span>
+                <div>Константин Владимирович</div>
+            </div>
+            <div class="team_b__name">
+                <span>Должность:</span>
+                <div>Руководитель</div>
+            </div>
+            <div class="team_b__name">
+                <span>Телефон:</span>
+                <div>+7 (3952) 265-994</div>
+            </div>
+            <div class="team_b__name">
+                <span>Добавочный:</span>
+                <div>12345</div>
+            </div>
+            <div class="team_b__name">
+                <span>Почта:</span>
+                <div>opt@auvint.ru</div>
+            </div>
+        </div>
+        <div class="team_b__block">
+            <div class="team_b__img"><picture><source srcset="img/bg_avat.webp" type="image/webp"><img src="img/bg_avat.png" alt=""></picture></div>
+            <div class="team_b__name">
+                <span>ФИО</span>
+                <div>Константин Владимирович</div>
+            </div>
+            <div class="team_b__name">
+                <span>Должность:</span>
+                <div>Руководитель</div>
+            </div>
+            <div class="team_b__name">
+                <span>Телефон:</span>
+                <div>+7 (3952) 265-994</div>
+            </div>
+            <div class="team_b__name">
+                <span>Добавочный:</span>
+                <div>12345</div>
+            </div>
+            <div class="team_b__name">
+                <span>Почта:</span>
+                <div>opt@auvint.ru</div>
+            </div>
+        </div>
+        <div class="team_b__block">
+            <div class="team_b__img"><picture><source srcset="img/bg_avat.webp" type="image/webp"><img src="img/bg_avat.png" alt=""></picture></div>
+            <div class="team_b__name">
+                <span>ФИО</span>
+                <div>Константин Владимирович</div>
+            </div>
+            <div class="team_b__name">
+                <span>Должность:</span>
+                <div>Руководитель</div>
+            </div>
+            <div class="team_b__name">
+                <span>Телефон:</span>
+                <div>+7 (3952) 265-994</div>
+            </div>
+            <div class="team_b__name">
+                <span>Добавочный:</span>
+                <div>12345</div>
+            </div>
+            <div class="team_b__name">
+                <span>Почта:</span>
+                <div>opt@auvint.ru</div>
+            </div>
+        </div>
+    </div>
+</div>
+        <footer class="footer">
+    <div class="footer__top">
+        <div class="footer__in center">
+            <div class="footer__left">
+                <a href="#" class="footer__logo">
+                    <img src="img/svg/logo.svg" width="100%" alt="">
+                </a>
+                <nav class="footer__mobile_menu" v-if="sizes.window <= 1280">
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Главная</a></li>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Новости</a></li>
+                        <li><a href="#" class="hasLineOnHover">Отзывы</a></li>
+                        <li><a href="#" class="hasLineOnHover">Контакты</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                </nav>
+                <ul class="footer__info_items">
+                    <li class="footer__info_item">ИП Ваньков Максим Юрьевич</li>
+                    <li class="footer__info_item">ИНН 772401953110</li>
+                    <li class="footer__info_item">ОГРН 317774600556173</li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="#" target="_blank" class="footer__social" v-for="item in 4">
+                        <img src="img/svg/instagram2.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__right" v-if="sizes.window > 1280">
+                <nav class="footer__menu">
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Главная</a></li>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Новости</a></li>
+                        <li><a href="#" class="hasLineOnHover">Отзывы</a></li>
+                        <li><a href="#" class="hasLineOnHover">Контакты</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+        <div class="modal" data-modal="1">
+    <div class="modal__in">
+        <div class="modal__closer"></div>
+        modal 1
+    </div>
+</div>
+
+<div class="modal" data-modal="2">
+    <div class="modal__in">
+        <div class="modal__closer"></div>
+        modal 2
+    </div>
+</div>
+    </div>
+    <script src="js/app.min.js?_v=20221106152636"></script>
+</body>
+</html>

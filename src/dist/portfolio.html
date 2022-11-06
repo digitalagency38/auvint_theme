@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css?_v=20221106152636">
+</head>
+<body>
+    <div class="wrapper" id="app" :class="{isMobile, isTablet}">
+        <header class="header" :class="{ 'isMobile': sizes.window <= 1280 }">
+    <div class="header__top" v-if="sizes.window > 1280">
+        <div class="header__top_in center">
+            <div class="header__top_left">
+                Инженерные решения любой сложности и широкий ассортимент товаров в наличии
+            </div>
+            <div class="header__top_middle">
+                <a href="mailto:opt@auvint.ru" class="item">opt@auvint.ru</a>
+                <div class="item">г. Иркутск, ул. Баррикад, 55</div>
+            </div>
+            <!-- <div class="header__top_right">
+                
+            </div> -->
+        </div>
+    </div>
+    <div class="header__bottom">
+        <div class="header__bottom_in center">
+            <a href="#" class="header__bottom_logo">
+                <img src="img/svg/logo.svg" width="100%" alt="">
+            </a>
+            <div class="header__bottom_buttons" v-if="sizes.window <= 1280">
+                <div class="header__bottom_button header__bottom_button--phone">
+                    <img src="img/svg/phone_opener.svg" width="100%" alt="">
+                </div>
+                <div class="header__bottom_button header__bottom_button--search">
+                    <img src="img/svg/search_opener.svg" width="100%" alt="">
+                </div>
+                <div class="header__bottom_button header__bottom_button--burger">
+                    <img src="img/svg/burger_opener.svg" width="100%" alt="">
+                </div>
+            </div>
+            <div class="header__bottom_search" v-if="sizes.window > 1280">
+                <input type="text" class="input">
+                <button class="search">
+                    <img src="img/svg/search.svg" width="100%" alt="">
+                </button>
+            </div>
+            <div class="header__bottom_phones" v-if="sizes.window > 1280">
+                <a href="tel:+73952265994">+7 (3952) 265-994</a>
+                <a href="tel:88005512069">8 800 551-20-69</a>
+            </div>
+        </div>
+    </div>
+    <div class="header__menu" v-if="sizes.window > 1280">
+        <div class="header__menu_in center">
+            <div class="header__menu_catalog">
+                <div class="header__menu_catalog_opener" @click="header.toggleModal.apply(header)">
+                    <div class="text">Каталог</div>
+                    <div class="arrow">
+                        <img src="img/svg/arrow.svg" width="100%" alt="">
+                    </div>
+                </div>
+            </div>
+            <nav class="header__menu_links">
+                <ul>
+                    <li><a href="#"><span>Услуги</span></a></li>
+                    <li><a href="#"><span>О компании</span></a></li>
+                    <li><a href="#"><span>Контакты</span></a></li>
+                    <li><a href="#"><span>Портфолио</span></a></li>
+                    <li><a href="#"><span>Благодарности</span></a></li>
+                    <li><a href="#"><span>Отзывы</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="header__catalog" v-if="sizes.window > 1280" :class="{'isOpened': header.isModalOpened}" v-if="sizes.window > 1280">
+        <div class="header__catalog_in center">
+            <div class="header__catalog_items">
+                <a href="#" class="header__catalog_item" v-for="(item, key) in 8">
+                    <div class="header__catalog_image">
+                        <img src='https://dummyimage.com/300x300.jpg?text=300x300' alt=''/>
+                    </div>
+                    <div class="header__catalog_info">
+                        <div class="header__catalog_name">Интерактивные панели {{ key }}</div>
+                        <div class="header__catalog_price">
+                            <div class="from">от</div>
+                            <div class="price">99 000 ₽</div>
+                        </div>
+                        <div class="header__catalog_more">
+                            Подробнее
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</header>
+        <div class="breadcrumbs">
+    <div class="breadcrumbs__in center">
+        <a href="#" class="link">Главная</a>
+        <span class="delim"></span>
+        <span class="cur">Услуги</span>
+    </div>
+</div>
+        <h1 class="page__title center">
+            Наше портфолио
+        </h1>
+        <div class="portfolio">
+    <div class="portfolio__in center">
+        <article class="projects__slide" v-for="item in 10" :key="item.index">
+            <div class="projects__slide_top">
+                <div class="projects__slide_image">
+                    <div class="projects__slide_image--in">
+                        <img src='https://dummyimage.com/600x600/6297BC/000.jpg?text=600x600' alt=''/>
+                    </div>
+                </div>
+                <time class="projects__slide_date">
+                    07.06.2022
+                </time>
+                <h3 class="projects__slide_name">
+                    Комплексное оснащение педагогических классов интерактивными панелями и мобильными стойками.
+                </h3>
+                <p class="projects__slide_text">
+                    Автоматизированная конференц-система с минимальной коммутацией, аккуратно собранной в один компактный бокс – не только звучит, но и выглядит красиво.
+                </p>
+            </div>
+            <a href="#" class="projects__slide_bottom">
+                <div class="text">Подробнее</div>
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="#6297BC">
+                        <path d="M23.1832 15.8166C23.3349 15.9751 23.4538 16.162 23.5332 16.3666C23.6999 16.7724 23.6999 17.2275 23.5332 17.6333C23.4538 17.8378 23.3349 18.0247 23.1832 18.1833L18.1832 23.1833C17.8693 23.4971 17.4437 23.6734 16.9998 23.6734C16.556 23.6734 16.1303 23.4971 15.8165 23.1833C15.5027 22.8694 15.3264 22.4438 15.3264 21.9999C15.3264 21.5561 15.5027 21.1304 15.8165 20.8166L17.9832 18.6666H11.9998C11.5578 18.6666 11.1339 18.491 10.8213 18.1784C10.5088 17.8659 10.3332 17.4419 10.3332 16.9999C10.3332 16.5579 10.5088 16.134 10.8213 15.8214C11.1339 15.5088 11.5578 15.3333 11.9998 15.3333H17.9832L15.8165 13.1833C15.6603 13.0283 15.5363 12.844 15.4517 12.6409C15.3671 12.4378 15.3235 12.2199 15.3235 11.9999C15.3235 11.7799 15.3671 11.5621 15.4517 11.359C15.5363 11.1559 15.6603 10.9715 15.8165 10.8166C15.9714 10.6604 16.1558 10.5364 16.3589 10.4518C16.562 10.3672 16.7798 10.3236 16.9998 10.3236C17.2199 10.3236 17.4377 10.3672 17.6408 10.4518C17.8439 10.5364 18.0282 10.6604 18.1832 10.8166L23.1832 15.8166ZM33.6665 16.9999C33.6665 20.2963 32.689 23.5186 30.8577 26.2594C29.0263 29.0002 26.4233 31.1365 23.3779 32.3979C20.3325 33.6594 16.9813 33.9894 13.7483 33.3463C10.5153 32.7033 7.5456 31.1159 5.21472 28.785C2.88385 26.4542 1.2965 23.4844 0.653412 20.2514C0.0103264 17.0184 0.340382 13.6673 1.60184 10.6219C2.8633 7.57643 4.99951 4.97345 7.74033 3.14209C10.4812 1.31073 13.7035 0.333252 16.9998 0.333252C19.1885 0.333252 21.3558 0.764348 23.3779 1.60193C25.4 2.4395 27.2373 3.66716 28.785 5.21481C31.9106 8.34041 33.6665 12.5796 33.6665 16.9999ZM3.6665 16.9999C3.6665 19.637 4.44849 22.2149 5.91358 24.4075C7.37866 26.6002 9.46104 28.3091 11.8974 29.3183C14.3337 30.3275 17.0146 30.5915 19.601 30.0771C22.1875 29.5626 24.5632 28.2927 26.4279 26.428C28.2926 24.5633 29.5625 22.1875 30.077 19.6011C30.5914 17.0147 30.3274 14.3338 29.3182 11.8975C28.3091 9.46113 26.6001 7.37874 24.4074 5.91366C22.2148 4.44857 19.6369 3.66659 16.9998 3.66659C13.4636 3.66659 10.0722 5.07134 7.57174 7.57183C5.07126 10.0723 3.6665 13.4637 3.6665 16.9999Z"/>
+                    </svg>
+                </div>
+            </a>
+        </article>
+    </div>
+</div>
+        <div class="seo_block">
+    <div class="seo_block__in center">
+        <div class="seo_block__title">Заголовок СЕО блока</div>
+        <div class="seo_block__text">
+            <p>Каждый из нас понимает очевидную вещь: высокое качество позиционных исследований предоставляет широкие возможности для стандартных подходов. Следует отметить, что внедрение современных методик напрямую зависит от системы обучения кадров, соответствующей насущным потребностям. Однозначно, базовые сценарии поведения пользователей неоднозначны и будут в равной степени предоставлены сами себе. Идейные соображения высшего порядка, а также выбранный нами инновационный путь в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.</p>
+            <p>Как уже неоднократно упомянуто, интерактивные прототипы формируют глобальную экономическую сеть и при этом —  рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Но предприниматели в сети интернет могут быть разоблачены.</p>
+        </div>
+    </div>
+</div>
+        <footer class="footer">
+    <div class="footer__top">
+        <div class="footer__in center">
+            <div class="footer__left">
+                <a href="#" class="footer__logo">
+                    <img src="img/svg/logo.svg" width="100%" alt="">
+                </a>
+                <nav class="footer__mobile_menu" v-if="sizes.window <= 1280">
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Главная</a></li>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Новости</a></li>
+                        <li><a href="#" class="hasLineOnHover">Отзывы</a></li>
+                        <li><a href="#" class="hasLineOnHover">Контакты</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                </nav>
+                <ul class="footer__info_items">
+                    <li class="footer__info_item">ИП Ваньков Максим Юрьевич</li>
+                    <li class="footer__info_item">ИНН 772401953110</li>
+                    <li class="footer__info_item">ОГРН 317774600556173</li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="#" target="_blank" class="footer__social" v-for="item in 4">
+                        <img src="img/svg/instagram2.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__right" v-if="sizes.window > 1280">
+                <nav class="footer__menu">
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Главная</a></li>
+                        <li><a href="#" class="hasLineOnHover">О компании</a></li>
+                        <li><a href="#" class="hasLineOnHover">Новости</a></li>
+                        <li><a href="#" class="hasLineOnHover">Отзывы</a></li>
+                        <li><a href="#" class="hasLineOnHover">Контакты</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="hasLineOnHover">Информация</a></li>
+                        <li><a href="#" class="hasLineOnHover">Сертификаты</a></li>
+                        <li><a href="#" class="hasLineOnHover">Помощь</a></li>
+                        <li><a href="#" class="hasLineOnHover">Наши предложения</a></li>
+                        <li><a href="#" class="hasLineOnHover">Преимущества</a></li>
+                        <li><a href="#" class="hasLineOnHover">Партнёрам</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+        <div class="modal" data-modal="1">
+    <div class="modal__in">
+        <div class="modal__closer"></div>
+        modal 1
+    </div>
+</div>
+
+<div class="modal" data-modal="2">
+    <div class="modal__in">
+        <div class="modal__closer"></div>
+        modal 2
+    </div>
+</div>
+    </div>
+    <script src="js/app.min.js?_v=20221106152636"></script>
+</body>
+</html>
