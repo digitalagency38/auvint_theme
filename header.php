@@ -59,8 +59,38 @@ $site_address = get_option('site_address');
             margin-top: 40px;
             display: block;
         }
+      .footer__social {
+          filter: brightness(0.5);
+      }
+      .contactsForm.new_forms {
+      	padding-top: 100px;
+        padding-bottom: 100px;
+      }
+      @media all and (max-width: 1023px) {
+      .contactsForm.new_forms {
+      	padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      }
+      @media all and (max-width: 768px) {
+        .main-slider__slide_right {
+        	padding-left: 0 !important;
+        }
+      }
     </style>
 	<script type="text/javascript">
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+    setTimeout(function(){
+
+    // Выберем кнопку и форму
+    const $form = document.querySelector('.formBlock');
+
+      $form.scrollIntoView({ 
+        block: 'nearest', // к ближайшей границе экрана
+        behavior: 'smooth', // и плавно 
+      });
+      }, 1000);
+}, false );
     document.addEventListener('DOMContentLoaded', function(){
         const ITEMS_COUNT_PER_CLICK = 12;
 
@@ -94,9 +124,20 @@ $site_address = get_option('site_address');
         };
 
         showButton.addEventListener('click', callback);
+        
+        
+        
     });
     </script>
-
+	
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T5398KS');</script>
+<!-- End Google Tag Manager -->
+	
 </head>
 
 <body <?php body_class(); ?>>
@@ -293,20 +334,19 @@ $site_address = get_option('site_address');
                     <div class="header__mobileMenu_footer-title header__mobileMenu_footer-item">
                         Инженерные решения любой сложности и широкий ассортимент товаров в наличии
                     </div>
-                    <a href="mailto:opt@auvint.ru"
+                    <a href="mailto:<?= $site_email; ?>"
                         class="header__mobileMenu_footer-email header__mobileMenu_footer-item">
-                        opt@auvint.ru
+                        <?= $site_email; ?>
                     </a>
                     <div class="header__mobileMenu_footer-address header__mobileMenu_footer-item">
-                        г. Иркутск, ул. Баррикад, 55
+                        <?= $site_address; ?>
                     </div>
                     <div class="header__socials">
-                        <a href="#" target="_blank" class="header__social">
-                            <img src="<?= get_template_directory_uri();?>/src/dist/img/svg/instagram_white.svg" alt="">
+                      <?php foreach ($site_socials_decoded as $icon) { ?>                        
+                        <a href="<?= $icon->link; ?>" target="_blank" class="header__social">
+                            <img src="<?= $icon->image_url; ?>" alt="">
                         </a>
-                        <a href="#" target="_blank" class="header__social">
-                            <img src="<?= get_template_directory_uri();?>/src/dist/img/svg/instagram_white.svg" alt="">
-                        </a>
+                      <?php }; ?>
                     </div>
                 </div>
             </div>
@@ -319,20 +359,19 @@ $site_address = get_option('site_address');
                     <div class="header__mobileMenu_footer-title header__mobileMenu_footer-item">
                         Инженерные решения любой сложности и широкий ассортимент товаров в наличии
                     </div>
-                    <a href="mailto:opt@auvint.ru"
+                    <a href="mailto:<?= $site_email; ?>"
                         class="header__mobileMenu_footer-email header__mobileMenu_footer-item">
-                        opt@auvint.ru
+                        <?= $site_email; ?>
                     </a>
                     <div class="header__mobileMenu_footer-address header__mobileMenu_footer-item">
-                        г. Иркутск, ул. Баррикад, 55
+                        <?= $site_address; ?>
                     </div>
                     <div class="header__socials">
-                        <a href="#" target="_blank" class="header__social">
-                            <img src="<?= get_template_directory_uri();?>/src/dist/img/svg/instagram_white.svg" alt="">
+                      <?php foreach ($site_socials_decoded as $icon) { ?>                        
+                        <a href="<?= $icon->link; ?>" target="_blank" class="header__social">
+                            <img src="<?= $icon->image_url; ?>" alt="">
                         </a>
-                        <a href="#" target="_blank" class="header__social">
-                            <img src="<?= get_template_directory_uri();?>/src/dist/img/svg/instagram_white.svg" alt="">
-                        </a>
+                      <?php }; ?>
                     </div>
                 </div>
             </div>
@@ -356,20 +395,19 @@ $site_address = get_option('site_address');
                     <div class="header__mobileMenu_footer-title header__mobileMenu_footer-item">
                         Инженерные решения любой сложности и широкий ассортимент товаров в наличии
                     </div>
-                    <a href="mailto:opt@auvint.ru"
+                    <a href="mailto:<?= $site_email; ?>"
                         class="header__mobileMenu_footer-email header__mobileMenu_footer-item">
-                        opt@auvint.ru
+                        <?= $site_email; ?>
                     </a>
                     <div class="header__mobileMenu_footer-address header__mobileMenu_footer-item">
-                        г. Иркутск, ул. Баррикад, 55
+                        <?= $site_address; ?>
                     </div>
                     <div class="header__socials">
-                        <a href="#" target="_blank" class="header__social">
-                            <img src="<?= get_template_directory_uri();?>/src/dist/img/svg/instagram_white.svg" alt="">
+                      <?php foreach ($site_socials_decoded as $icon) { ?>                        
+                        <a href="<?= $icon->link; ?>" target="_blank" class="header__social">
+                            <img src="<?= $icon->image_url; ?>" alt="">
                         </a>
-                        <a href="#" target="_blank" class="header__social">
-                            <img src="<?= get_template_directory_uri();?>/src/dist/img/svg/instagram_white.svg" alt="">
-                        </a>
+                      <?php }; ?>
                     </div>
                 </div>
             </div>

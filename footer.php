@@ -80,9 +80,9 @@ $site_socials_decoded = json_decode($site_socials);
                     ?>
                 </nav>
                 <ul class="footer__info_items">
-                    <li class="footer__info_item">ИП Ваньков Максим Юрьевич</li>
-                    <li class="footer__info_item">ИНН 772401953110</li>
-                    <li class="footer__info_item">ОГРН 317774600556173</li>
+                    <li class="footer__info_item">ООО Аувинт</li>
+                    <li class="footer__info_item">ИНН 3849081686</li>
+                    <li class="footer__info_item">КПП 384901001</li>
                 </ul>
                 <?php if( $site_socials_decoded ) { ?>
                     <div class="footer__socials" v-if="sizes.window > 1280">

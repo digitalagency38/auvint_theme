@@ -68,12 +68,7 @@ window.app = new Vue({
         this.portfolioSlider.init();
         console.log(this.clients);
 
-        document.onreadystatechange = () => {
-            if (document.readyState == "complete") {
-                console.log('tratata');
-                this.isLoaded = true
-            }
-        }
+        this.isLoaded = true;
     },
     computed: {
         isMobile: function () {
