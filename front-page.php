@@ -613,7 +613,7 @@ $site_map = get_option('site_map');
                 <? if (!empty($site_phone)) { ?>
                     <div class="map__contact map__contact--address">
                         <div class="title">Телефон</div>
-                        <a href="tel:<?= $site_phone; ?>" class="text"><?= $site_phone; ?></a>
+                        <a href="tel:<?= $site_phone; ?>" class="text zphone"><?= $site_phone; ?></a>
                     </div>
                 <? }; ?>
                 <? if (!empty($site_email)) { ?>
