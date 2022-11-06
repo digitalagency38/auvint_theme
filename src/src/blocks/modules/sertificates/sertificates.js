@@ -10,6 +10,8 @@ const Sertificates = class sertificates {
         this.slider = new Glide('.sertificates__slider', {
             perView: 4,
             gap: 20,
+            swipeThreshold: false,
+            dragThreshold: false,
             breakpoints: {
                 1280: {
                     perView: 2,
