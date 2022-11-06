@@ -85,7 +85,7 @@ $site_socials_decoded = json_decode($site_socials);
                     <li class="footer__info_item">КПП 384901001</li>
                 </ul>
                 <?php if( $site_socials_decoded ) { ?>
-                    <div class="footer__socials" v-if="sizes.window > 1280">
+                    <div class="footer__socials">
                         <?php foreach ($site_socials_decoded as $icon) { ?>                            
                             <a href="<?= $icon->link; ?>" target="_blank" class="footer__social">
                                 <img src="<?= $icon->image_url; ?>"
