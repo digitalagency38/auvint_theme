@@ -216,7 +216,7 @@ if ($post_type === 'products' || $post_type === 'portfolio') {
 <? }; ?>
 
 <? if (!empty($form_data)) { ?>
-<div class="formBlock 123">
+<div class="formBlock noMarginBottom">
 	<div class="formBlock__in center">
 		<div class="formBlock__title"><?= $form_data['title']; ?></div>
 		<div class="formBlock__subtitle"><?= $form_data['subtitle']; ?></div>
@@ -495,7 +495,7 @@ if ($post_type === 'products' || $post_type === 'portfolio') {
     </div>
 <? }; ?>
 <? if (!empty($form_data)) { ?>
-<div class="formBlock">
+<div class="formBlock noMarginBottom">
 	<div class="formBlock__in center">
 		<div class="formBlock__title"><?= $form_data['title']; ?></div>
 		<div class="formBlock__subtitle"><?= $form_data['subtitle']; ?></div>
