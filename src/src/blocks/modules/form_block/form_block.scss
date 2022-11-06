@@ -6,6 +6,9 @@
     &.noMarginBottom {
         margin-bottom: 0;
     }
+    &.noPaddingTop {
+        padding-top: 0;
+    }
     &__title {
         @extend %title;
         margin-bottom: 40px;
