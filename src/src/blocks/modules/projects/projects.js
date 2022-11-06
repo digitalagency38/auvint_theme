@@ -30,6 +30,7 @@ const Projects = class Projects {
         })
     }
     init() {
+        console.log('asdasasdasdasd');
         this.initSlider();
     }
 };
