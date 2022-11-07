@@ -138,6 +138,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-T5398KS');</script>
 <!-- End Google Tag Manager -->
 	
+	<meta name="yandex-verification" content="87276487c4204eef" />	
+	
 </head>
 
 <body <?php body_class(); ?>>
