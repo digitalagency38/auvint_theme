@@ -137,10 +137,6 @@ if ($post_type === 'products' || $post_type === 'portfolio') {
                                             <?php endif; ?>
                             </div>
                         </div>
-                        <!-- <time class="projects__slide_date">
-                            <!--<?= get_field('date'); ?>-->
-<?= get_the_date(); ?>
-                        </time> -->
                         <h3 class="projects__slide_name">
                             <?= get_field('name'); ?>
                         </h3>
