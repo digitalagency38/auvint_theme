@@ -369,7 +369,7 @@ if ($post_type === 'products' || $post_type === 'portfolio') {
 </div>
 <div class="pageTop__wrap center">
 	<div class="pageTop__left">
-		<div class="pageTop__src<?if ($banner_bg) { ?> <?= $banner_bg ?> <? }; ?>">
+		<div class="pageTop__src ghhghgfg <? if ($banner_bg) { ?> <?= $banner_bg ?> <? }; ?>">
 			<div class="breadcrumbs" v-if="sizes.window > 1280">
 				<div class="breadcrumbs__in">
 					<?php if(function_exists('bcn_display'))
