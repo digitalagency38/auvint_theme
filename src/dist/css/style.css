@@ -1677,7 +1677,7 @@ html {
 .pageTop__src.isWhite .breadcrumbs span:not(.delim),
 .pageTop__src.isWhite .pageTop__description,
 .pageTop__src.isWhite .page__title {
-  color: #fff;
+  color: #fff !important;
 }
 
 .pageTop__src.isWhite .breadcrumbs .delim {

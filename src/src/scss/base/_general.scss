@@ -887,7 +887,7 @@ body, html {
       .breadcrumbs span:not(.delim),
       .pageTop__description,
       .page__title {
-        color: #fff;
+        color: #fff !important;
       }
       .breadcrumbs .delim {
         background: #fff;
