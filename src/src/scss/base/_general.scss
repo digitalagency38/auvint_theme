@@ -819,6 +819,7 @@ body, html {
         display: none;
       }
     }
+    
     @media all and (max-width: 1280px) {
         padding-bottom: 50px;
         &:after {
@@ -879,6 +880,16 @@ body, html {
             box-sizing: border-box;
             text-align: center;
         }
+    }
+    &__src.isWhite {
+      .breadcrumbs a, .breadcrumbs span:not(.delim),
+      .pageTop__description,
+      .page__title {
+        color: #fff;
+      }
+      .breadcrumbs .delim {
+        background: #fff;
+      }
     }
 }
 
