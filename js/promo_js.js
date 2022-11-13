@@ -28,5 +28,8 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     };
 
-    showButton.addEventListener('click', callback);
+    if (showButton) {
+
+        showButton.addEventListener('click', callback);
+    }
 });
