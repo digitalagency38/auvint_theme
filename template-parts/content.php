@@ -30,7 +30,6 @@ if ($post_type === 'services') {
 }
 if ($post_type === 'categories') {
 	$products_list = get_field('products_list');
-	$banner_bg = get_field('banner_bg');
 	$projects = get_field('projects');
 	$seo_block = get_field('seo_block');
 	$form_data = get_field('form_data');
