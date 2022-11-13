@@ -882,7 +882,9 @@ body, html {
         }
     }
     &__src.isWhite {
-      .breadcrumbs a, .breadcrumbs span:not(.delim),
+      .breadcrumbs a,
+      .breadcrumbs a span,
+      .breadcrumbs span:not(.delim),
       .pageTop__description,
       .page__title {
         color: #fff;
