@@ -30,6 +30,7 @@ if ($post_type === 'services') {
 }
 if ($post_type === 'categories') {
 	$products_list = get_field('products_list');
+	$banner_bg = get_field('banner_bg');
 	$projects = get_field('projects');
 	$seo_block = get_field('seo_block');
 	$form_data = get_field('form_data');
@@ -362,7 +363,7 @@ if ($post_type === 'products' || $post_type === 'portfolio') {
 
 <? } elseif ($post_type === 'services') { ?>
 	<div class="pageTop">
-		
+
 
 
 <div class="pageTop__background">
@@ -370,7 +371,7 @@ if ($post_type === 'products' || $post_type === 'portfolio') {
 </div>
 <div class="pageTop__wrap center">
 	<div class="pageTop__left">
-		<div class="pageTop__src ghhghgfg <?= $banner_bg ?>">
+		<div class="pageTop__src<? if ($banner_bg == '1') ?> isWhite<? }; ?>">
 			<div class="breadcrumbs" v-if="sizes.window > 1280">
 				<div class="breadcrumbs__in">
 					<?php if(function_exists('bcn_display'))
