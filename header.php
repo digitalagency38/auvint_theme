@@ -121,8 +121,9 @@ $site_address = get_option('site_address');
         items[i++].style.display = '';
         }
         };
-
-        showButton.addEventListener('click', callback);
+        if (showButton) {
+            showButton.addEventListener('click', callback);
+        }
         
         
         
