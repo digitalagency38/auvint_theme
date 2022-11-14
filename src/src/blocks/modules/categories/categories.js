@@ -17,10 +17,14 @@ const Categories = class Categories {
                 1280: {
                     perView: 2,
                     gap: 16,
+                    swipeThreshold: 200,
+                    dragThreshold: 200,
                 },
                 860: {
                     perView: 1,
                     gap: 16,
+                    swipeThreshold: 200,
+                    dragThreshold: 200,
                 }
             }
         }).mount();

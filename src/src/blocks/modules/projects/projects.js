@@ -17,20 +17,22 @@ const Projects = class Projects {
                 1280: {
                     perView: 2,
                     gap: 16,
+                    swipeThreshold: 200,
+                    dragThreshold: 200,
                 },
                 860: {
                     perView: 1,
                     gap: 16,
+                    swipeThreshold: 200,
+                    dragThreshold: 200,
                 }
             }
         }).mount();
         this.slider.on(['run'], () => {
-            console.log(this.index);ß
             this.index = this.slider.index;
         })
     }
     init() {
-        console.log('asdasasdasdasd');
         this.initSlider();
     }
 };
